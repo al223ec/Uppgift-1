@@ -1,7 +1,7 @@
-c:\users\al223ec\documents\visual studio 2012\Projects\TestTriangel\bin\Debug\TestTriangel.dll
-c:\users\al223ec\documents\visual studio 2012\Projects\TestTriangel\bin\Debug\TestTriangel.pdb
-c:\users\al223ec\documents\visual studio 2012\Projects\TestTriangel\bin\Debug\L01Testning.exe
-c:\users\al223ec\documents\visual studio 2012\Projects\TestTriangel\bin\Debug\L01Testning.pdb
-c:\users\al223ec\documents\visual studio 2012\Projects\TestTriangel\obj\Debug\TestTriangel.csprojResolveAssemblyReference.cache
-c:\users\al223ec\documents\visual studio 2012\Projects\TestTriangel\obj\Debug\TestTriangel.dll
-c:\users\al223ec\documents\visual studio 2012\Projects\TestTriangel\obj\Debug\TestTriangel.pdb
+C:\Users\al223ec\Documents\GitHub\Uppgift-1\Triangel\kod\c#\TestTriangel\bin\Debug\TestTriangel.dll
+C:\Users\al223ec\Documents\GitHub\Uppgift-1\Triangel\kod\c#\TestTriangel\bin\Debug\TestTriangel.pdb
+C:\Users\al223ec\Documents\GitHub\Uppgift-1\Triangel\kod\c#\TestTriangel\bin\Debug\L01Testning.exe
+C:\Users\al223ec\Documents\GitHub\Uppgift-1\Triangel\kod\c#\TestTriangel\bin\Debug\L01Testning.pdb
+C:\Users\al223ec\Documents\GitHub\Uppgift-1\Triangel\kod\c#\TestTriangel\obj\Debug\TestTriangel.dll
+C:\Users\al223ec\Documents\GitHub\Uppgift-1\Triangel\kod\c#\TestTriangel\obj\Debug\TestTriangel.pdb
+C:\Users\al223ec\Documents\GitHub\Uppgift-1\Triangel\kod\c#\TestTriangel\obj\Debug\TestTriangel.csprojResolveAssemblyReference.cache
