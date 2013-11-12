@@ -1,9 +1,17 @@
 Black box tester
 =====================
 
+1. Analysera applikationen och skapa ett antal testfall. Använd t.ex. ekvivalensklasser och gränsvärdesanalys.
+2. Utför dina testfall, d.v.s. kör applikationen och mata in den indata du skapat enligt ovan.
+3. Granska och dokumentera utfallet (lyckat/misslyckat ev. kommentar).
+4. Upprepa steg från steg 1 tills du är nöjd.
+5. Analysera ev. felaktigheter och sammanfatta i din testrapport.
+
+
+Ekvivanlensklasser
 
 Argument
-
+--------
 x, y, z
 x, x, y
 x, x, x
@@ -11,5 +19,18 @@ x, y, y
 x, x
 x, 
 x, x, x, x
+0, x, y
+0, 0, x
+x, 0, 0
+x, x, 0
 
 Negativa tal
+Strängar
+
+
+White box tester
+======================
+1. Analysera koden för den givna klassen (Triangle).
+2. Implementera enhetstester som täcker funktionaliteten i klassen.
+3. Utför enhetstesterna och korrigera de fel/defekter/brister du hittar om du satsar på betyg över 3.
+4. Upprepa steg från steg 1 tills du är nöjd.
