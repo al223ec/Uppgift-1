@@ -7,25 +7,45 @@ Black box tester
 4. Upprepa steg från steg 1 tills du är nöjd.
 5. Analysera ev. felaktigheter och sammanfatta i din testrapport.
 
+Förutsätter att programmet tar rektangelns sidor som argument
+Programmet triangel.exe läser in tre sidor hos en giltig triangel och avgör om den är liksidig (Equilateral), 
+likbent (Isosceles) eller om den inte har några lika sidor (Scalene). Sidorna anges som decimaltal (double) på 
+kommandoraden. Programmet skriver ut vilken typ av triangel sidorna bildar. 
+
+
+Testa om triangel.exe endast tar emot rätvinkliga trianglar
+Testa ogiltiga värden, 2 korta 1 lång.
 
 Ekvivanlensklasser
 
 Argument
 --------
-x, y, z
-x, x, y
-x, x, x
-x, y, y
-x, x
-x, 
-x, x, x, x
-0, x, y
-0, 0, x
-x, 0, 0
-x, x, 0
+x, y, z //skev
+x, x, y //Rätvinklig
+x, x,5 y //skev
+x, x, x //Liksidig
+x, y, y //rätvinklig
 
-Negativa tal
-Strängar
+x, x	Fail
+x, 	fail
+x, x, x, x Fail
+0, x, y	fail
+0, 0, x fAIL
+x, 0, 0 fAIL
+x, x, 0 FAIL
+-x, x, x fail
+0,3, 0,5, 0,9 Success //skev //Bekräfta decimal
+
+Gränsvärdesanalys
+-----------------
+högttal, x, x fail
+negativttal, x, x fail
+högttal, högttal, x success
+
+decimaltal success
+Strängar fail
+
+
 
 
 White box tester
@@ -34,3 +54,7 @@ White box tester
 2. Implementera enhetstester som täcker funktionaliteten i klassen.
 3. Utför enhetstesterna och korrigera de fel/defekter/brister du hittar om du satsar på betyg över 3.
 4. Upprepa steg från steg 1 tills du är nöjd.
+
+
+Felet är att uträkningarna endast funkar om en av sidorna i trinageln är i vinkeln till x eller y axeln. 
+Punktsystemet verkar skevt. 
