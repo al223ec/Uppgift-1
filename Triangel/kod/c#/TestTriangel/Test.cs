@@ -18,10 +18,38 @@ namespace TestTriangel
         }
         
         [TestMethod]
-        public void isEquilateralTest() { }
+        public void isEquilateralTest() 
+        {
+            Triangle t = new Triangle(6, 6, 6);
+            Assert.IsTrue(t.isEquilateral());
+        }
         
         [TestMethod]
-        public void isScaleneTest() { }
+        public void isScaleneTest() 
+        {
+            Triangle t = new Triangle(2.0, 3, 3.61);
+            Assert.IsTrue(t.isScalene());
+        }
+        [TestMethod]
+        public void isNotIsoscelesTest()
+        {
+            Triangle t = new Triangle(2.0, 3.0, 3.61);
+            Assert.IsFalse(t.isIsosceles());
+        }
+
+        [TestMethod]
+        public void isNotEquilateralTest()
+        {
+            Triangle t = new Triangle(6, 3, 6);
+            Assert.IsFalse(t.isEquilateral());
+        }
+
+        [TestMethod]
+        public void isNotScaleneTest()
+        {
+            Triangle t = new Triangle(3, 3, 3);
+            Assert.IsFalse(t.isScalene());
+        }
 
         [TestMethod]
         public void TestConstrunctorDoubleValue()
@@ -37,16 +65,8 @@ namespace TestTriangel
         {
             //Skapar ett objekt med en double Array som argument
             double[] sides = (double[])GetFieldValue(new Triangle(new double[] { 3, 4, 5 }), "sides");
-            Assert.IsTrue(sides[0] == 3 && sides[1] == 4 && sides[2] == 5);
+            Assert.IsTrue(sides[0] == 3 && sides[1] == 4 && sides[2] == 5, "Programmet tar inte hand om double arrayen på ett korrekt sätt");
         }
-        //[TestMethod]
-        //public void GetArrayValue()
-        //{
-        //    double[] sides = (double[])GetFieldValue(new Triangle(new double[] { 3, 4, 5 }), "sides");
-        //    Assert.IsTrue(sides[0] == 3 && sides[1] == 4 && sides[2] == 5);
-
-        //}
-        //Testar konstuktor som tar 3 punkter som argument
         [TestMethod]
         public void TestConstructorPointValue()
         {
@@ -100,8 +120,6 @@ namespace TestTriangel
             {
                 Assert.Fail("ArgumentException kastas inte när ett triangel objekt intieras med felaktiga point värden");
             }
-
-            
         }
         [TestMethod]
         public void TestConstructorFaultyDoubleValues()
@@ -120,23 +138,32 @@ namespace TestTriangel
                 Assert.Fail("ArgumentException kastas inte när ett triangel objekt intieras med felaktiga double värden");
             }
         }
-        //[TestMethod]
-        //public void TestConstructorFaultyDoubleValuesNotATriangel()
-        //{
-        //    try
-        //    {
-        //        Triangle triangleDouble = new Triangle(-3, -98, 0);
-        //        throw new ApplicationException();
-        //    }
-        //    catch (ArgumentException)
-        //    {
-        //        return;
-        //    }
-        //    catch
-        //    {
-        //        Assert.Fail("ArgumentException kastas inte när ett triangel objekt intieras med felaktiga double värden");
-        //    }
-        //}
+        [TestMethod]
+        public void TestConstructorFaultyDoubleArrayValues()
+        {
+            try
+            {
+                Triangle triangleDoubleArray = new Triangle(new double[]{ 3, 4, 5, 6, 7 });
+                throw new ApplicationException();
+            }
+            catch (ArgumentException)
+            {
+                return;
+            }
+            catch
+            {
+                Assert.Fail("ArgumentException kastas inte när ett triangel objekt intieras med en för stor double array värden");
+            }
+        }
+
+        [TestMethod]
+        public void TestPoint()
+        {
+            Point a = new Point(4, 0);
+
+            Assert.IsTrue(a.x == 4, "point structuren tilldelar inte värden rätt!!");
+            Assert.IsTrue(a.y == 0, "point structuren tilldelar inte värden rätt!!");
+        }
         private static object GetFieldValue(object o, string name)
         {
             var field = o.GetType().GetField(name, BindingFlags.NonPublic | BindingFlags.Instance);

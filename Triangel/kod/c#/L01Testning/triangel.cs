@@ -12,52 +12,71 @@ public struct Point {
 }
 
 public class Triangle {
-  double[] sides;
+  private double[] sides;
+  private double[] Sides
+  {
+      set
+      {
+          if (value.Length > 3)
+          {
+              throw new ArgumentException("En triangel kan endast ha 3 sidor");
+          }
+          foreach (double side in value)
+          {
+              if (side < 0)
+              {
+                  throw new ArgumentException("Detta är ett ogiltigt värde för en triangel");
+              }
+          }
+          sides = value;
+      }
+  }
 
   public Triangle(double a, double b, double c) {
-    sides = new double[] { a, b, c };
+    Sides = new double[] { a, b, c };
   } 
 
   public Triangle(double[] s) {
-    sides = new double[s.Length];
-    for(int i=0;i<s.Length;i++)
-      sides[i]=s[i];
+      Sides = s;
   } 
 
   public Triangle(Point a, Point b, Point c) {
-    sides = new double[3];
+      Sides = new double[3]{
+        Math.Sqrt(Math.Pow((double)(b.x - a.x), 2.0) + Math.Pow((double)(b.y - a.y), 2.0)),
+        Math.Sqrt(Math.Pow((double)(c.x - a.x), 2.0) + Math.Pow((double)(c.y - a.y), 2.0)),
+        Math.Sqrt(Math.Pow((double)(c.x - b.x), 2.0) + Math.Pow((double)(c.y - b.y), 2.0))
+      };
     //sides[0] = Math.Sqrt(Math.Pow((double)(b.x - a.x), 2.0) + Math.Pow((double)(b.y - a.y), 2.0));
     //sides[1] = Math.Sqrt(Math.Pow((double)(b.x - c.x), 2.0) + Math.Pow((double)(b.x - a.x), 2.0));
     //sides[2] = Math.Sqrt(Math.Pow((double)(c.x - a.x), 2.0) + Math.Pow((double)(c.x - a.x), 2.0));
-    sides[0] = Math.Sqrt(Math.Pow((double)(b.x - a.x), 2.0) + Math.Pow((double)(b.y - a.y), 2.0));
-    sides[1] = Math.Sqrt(Math.Pow((double)(c.x - a.x), 2.0) + Math.Pow((double)(c.y - a.y), 2.0));
-    sides[2] = Math.Sqrt(Math.Pow((double)(c.x - b.x), 2.0) + Math.Pow((double)(c.y - b.y), 2.0));
-
   }
 
   public Triangle(Point[] s) {
-    sides = new double[s.Length];
+      Sides = new double[s.Length];
+      Sides = new double[]{
+        Math.Sqrt(Math.Pow((double)(s[1].x - s[0].x), 2.0) + Math.Pow((double)(s[1].y - s[0].y), 2.0)),
+        Math.Sqrt(Math.Pow((double)(s[2].x - s[0].x), 2.0) + Math.Pow((double)(s[2].y - s[0].y), 2.0)),
+        Math.Sqrt(Math.Pow((double)(s[2].x - s[1].x), 2.0) + Math.Pow((double)(s[2].y - s[1].y), 2.0))
+      };
     //sides[0] = Math.Sqrt(Math.Pow((double)(s[1].x - s[0].x), 2.0) + Math.Pow((double)(s[1].y - s[0].y), 2.0));
     //sides[1] = Math.Sqrt(Math.Pow((double)(s[1].x - s[2].x), 2.0) + Math.Pow((double)(s[1].x - s[2].x), 2.0));
     //sides[2] = Math.Sqrt(Math.Pow((double)(s[2].x - s[0].x), 2.0) + Math.Pow((double)(s[2].x - s[0].x), 2.0));
-    sides[0] = Math.Sqrt(Math.Pow((double)(s[1].x - s[0].x), 2.0) + Math.Pow((double)(s[1].y - s[0].y), 2.0));
-    sides[1] = Math.Sqrt(Math.Pow((double)(s[2].x - s[0].x), 2.0) + Math.Pow((double)(s[2].y - s[0].y), 2.0));
-    sides[2] = Math.Sqrt(Math.Pow((double)(s[2].x - s[1].x), 2.0) + Math.Pow((double)(s[2].y - s[1].y), 2.0));
-
   }
 
-  private int uniqueSides() {
+  //Denna metod returnerar hur många unika sidor triangeln har, 1 unik sida == alla sidor är lika
+  public int uniqueSides()
+  {
     return sides.Distinct<double>().Count();
   }
 
   public bool isScalene() {
-    if(uniqueSides()==1)
+    if(uniqueSides()==3)
       return true;
     return false;
   }
 
   public bool isEquilateral() {
-    if(uniqueSides()==3)
+    if(uniqueSides()==1)
       return true;
     return false;
   }
@@ -70,23 +89,9 @@ public class Triangle {
 }
 class Program
 {
-    static void Main(string[] args) {
-
-        Point a = new Point(4, 0);
-        Point b = new Point(0, 3);
-        Point c = new Point(0, 0);
-
-        //Kontrollera att programmet räknar ut rätt längd på sidorna
-        double sidec = Math.Sqrt(Math.Pow((double)(b.x - a.x), 2.0) + Math.Pow((double)(b.y - a.y), 2.0));
-        double sideb = Math.Sqrt(Math.Pow((double)(c.x - a.x), 2.0) + Math.Pow((double)(c.y - a.y), 2.0));
-        double sidea = Math.Sqrt(Math.Pow((double)(c.x - b.x), 2.0) + Math.Pow((double)(c.y - b.y), 2.0));
-
-        double[] sides = new double[3];
-        sides[0] = Math.Sqrt(Math.Pow((double)(b.x - a.x), 2.0) + Math.Pow((double)(b.y - a.y), 2.0));
-        sides[1] = Math.Sqrt(Math.Pow((double)(b.x - c.x), 2.0) + Math.Pow((double)(b.x - a.x), 2.0));
-        sides[2] = Math.Sqrt(Math.Pow((double)(c.x - a.x), 2.0) + Math.Pow((double)(c.x - a.x), 2.0));
-    }
+    static void Main(string[] args) { }
 }
+
 //Exempel på användning: 
 // class Program { 
 //static void Main(string[] args) { 
