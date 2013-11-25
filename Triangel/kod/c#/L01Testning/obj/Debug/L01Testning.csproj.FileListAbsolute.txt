@@ -10,3 +10,6 @@ C:\Users\al223ec\Documents\GitHub\Uppgift-1\Triangel\kod\c#\L01Testning\obj\Debu
 C:\Users\al223ec\Documents\GitHub\Uppgift-1\Triangel\kod\c#\L01Testning\bin\Debug\L01Testning.exe
 C:\Users\al223ec\Documents\GitHub\Uppgift-1\Triangel\kod\c#\L01Testning\bin\Debug\L01Testning.pdb
 C:\Users\al223ec\Documents\GitHub\Uppgift-1\Triangel\kod\c#\L01Testning\obj\Debug\L01Testning.csprojResolveAssemblyReference.cache
+C:\Users\al223ec\Desktop\Uppgift-1\Triangel\kod\c#\L01Testning\bin\Debug\L01Testning.exe.config
+C:\Users\al223ec\Desktop\Uppgift-1\Triangel\kod\c#\L01Testning\obj\Debug\L01Testning.exe
+C:\Users\al223ec\Desktop\Uppgift-1\Triangel\kod\c#\L01Testning\obj\Debug\L01Testning.pdb
