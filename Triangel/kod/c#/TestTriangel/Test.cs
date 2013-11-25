@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Reflection;
 
 namespace TestTriangel
 {
@@ -9,14 +10,17 @@ namespace TestTriangel
         //liksidig (Equilateral), 
         //likbent (Isosceles)
         //inte några lika sidor (Scalene)
-
         [TestMethod]
         public void isIsoscelesTest()
         {
             Triangle t = new Triangle(1.0, 0.5, 1.0);
             Assert.IsTrue(t.isIsosceles());
         }
+        
+        [TestMethod]
         public void isEquilateralTest() { }
+        
+        [TestMethod]
         public void isScaleneTest() { }
 
         [TestMethod]
@@ -35,7 +39,6 @@ namespace TestTriangel
             double[] sides = (double[])GetFieldValue(new Triangle(new double[] { 3, 4, 5 }), "sides");
             Assert.IsTrue(sides[0] == 3 && sides[1] == 4 && sides[2] == 5);
         }
-
         //[TestMethod]
         //public void GetArrayValue()
         //{
@@ -47,35 +50,93 @@ namespace TestTriangel
         [TestMethod]
         public void TestConstructorPointValue()
         {
-            Point p1 = new Point(4, 0);
-            Point p2 = new Point(0, 3);
-            Point p3 = new Point(0, 0);
+            Point a = new Point(4, 0);
+            Point b = new Point(0, 3);
+            Point c = new Point(0, 0);
 
-            double[] sides = (double[])GetFieldValue(new Triangle(p1, p2, p3), "sides");
+            double[] sides = (double[])GetFieldValue(new Triangle(a, b, c), "sides");
 
-            //Kontrollera att programmet räknar ut rätt längd på sidorna
-            Assert.IsTrue(sides[0] == 4, "programmet räknar inte ut sidorna rätt!!");
-            Assert.IsTrue(sides[1] == Math.Sqrt(25), "programmet räknar inte ut sidorna rätt!!");
-            Assert.IsTrue(sides[2] == 3, "programmet räknar inte ut sidorna rätt!!");
+            Assert.IsTrue(sides[0] == 5, "programmet räknar inte ut sidan 0 rätt!!"); //c 
+            Assert.IsTrue(sides[1] == 4, "programmet räknar inte ut sidan 1 rätt!!"); //b
+            Assert.IsTrue(sides[2] == 3, "programmet räknar inte ut sidan 2 rätt!!"); //a
         }
 
         //Testar konstuktor som tar en Array med punkter 
         [TestMethod]
         public void TestConstructorArrayPointValue()
         {
-            Point p1 = new Point(5, 0);
-            Point p2 = new Point(0, 8);
-            Point p3 = new Point(0, 0);
+            Point a = new Point(4, 0);
+            Point b = new Point(0, 3);
+            Point c = new Point(0, 0);
 
-            double[] sides = (double[])GetFieldValue(new Triangle(new Point[] { p1, p2, p3 }), "sides");
-
+            double[] sides = (double[])GetFieldValue(new Triangle(new Point[] { a, b, c }), "sides");
 
             //Kontrollera att programmet räknar ut rätt längd på sidorna
-            Assert.IsTrue(sides[0] == 4);
-            Assert.IsTrue(sides[1] == Math.Sqrt(100));
-            Assert.IsTrue(sides[2] == 3);
+            Assert.IsTrue(sides[0] == 5, "programmet räknar inte ut sidan 0 rätt!!"); //c 
+            Assert.IsTrue(sides[1] == 4, "programmet räknar inte ut sidan 1 rätt!!"); //b
+            Assert.IsTrue(sides[2] == 3, "programmet räknar inte ut sidan 2 rätt!!"); //a
         }
 
+        [TestMethod]
+        public void TestConstructorFaultyPointValues()
+        {
+            Point a = new Point(4, 0);
+            Point b = new Point(0, 3);
+            Point c = new Point(0, 0);
+            Point d = new Point(4, 0);
+            Point e = new Point(0, 3);
+            Point f = new Point(0, 0);
+
+            try
+            {
+                Triangle trianglePoints = new Triangle(new Point[] { a, b, c, d, e, f });
+                throw new ApplicationException();
+            }
+            catch (ArgumentException)
+            {
+                return;
+            }
+            catch
+            {
+                Assert.Fail("ArgumentException kastas inte när ett triangel objekt intieras med felaktiga point värden");
+            }
+
+            
+        }
+        [TestMethod]
+        public void TestConstructorFaultyDoubleValues()
+        {
+            try
+            {
+                Triangle triangleDouble = new Triangle(-3, -98, 0);
+                throw new ApplicationException();
+            }
+            catch (ArgumentException)
+            {
+                return;
+            }
+            catch
+            {
+                Assert.Fail("ArgumentException kastas inte när ett triangel objekt intieras med felaktiga double värden");
+            }
+        }
+        //[TestMethod]
+        //public void TestConstructorFaultyDoubleValuesNotATriangel()
+        //{
+        //    try
+        //    {
+        //        Triangle triangleDouble = new Triangle(-3, -98, 0);
+        //        throw new ApplicationException();
+        //    }
+        //    catch (ArgumentException)
+        //    {
+        //        return;
+        //    }
+        //    catch
+        //    {
+        //        Assert.Fail("ArgumentException kastas inte när ett triangel objekt intieras med felaktiga double värden");
+        //    }
+        //}
         private static object GetFieldValue(object o, string name)
         {
             var field = o.GetType().GetField(name, BindingFlags.NonPublic | BindingFlags.Instance);

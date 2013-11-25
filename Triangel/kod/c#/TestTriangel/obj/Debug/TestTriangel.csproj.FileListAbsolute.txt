@@ -5,3 +5,10 @@ C:\Users\al223ec\Documents\GitHub\Uppgift-1\Triangel\kod\c#\TestTriangel\bin\Deb
 C:\Users\al223ec\Documents\GitHub\Uppgift-1\Triangel\kod\c#\TestTriangel\obj\Debug\TestTriangel.dll
 C:\Users\al223ec\Documents\GitHub\Uppgift-1\Triangel\kod\c#\TestTriangel\obj\Debug\TestTriangel.pdb
 C:\Users\al223ec\Documents\GitHub\Uppgift-1\Triangel\kod\c#\TestTriangel\obj\Debug\TestTriangel.csprojResolveAssemblyReference.cache
+C:\Users\al223ec\Desktop\Uppgift-1\Triangel\kod\c#\TestTriangel\obj\Debug\TestTriangel.csprojResolveAssemblyReference.cache
+C:\Users\al223ec\Desktop\Uppgift-1\Triangel\kod\c#\TestTriangel\obj\Debug\TestTriangel.dll
+C:\Users\al223ec\Desktop\Uppgift-1\Triangel\kod\c#\TestTriangel\bin\Debug\TestTriangel.dll
+C:\Users\al223ec\Desktop\Uppgift-1\Triangel\kod\c#\TestTriangel\bin\Debug\TestTriangel.pdb
+C:\Users\al223ec\Desktop\Uppgift-1\Triangel\kod\c#\TestTriangel\bin\Debug\L01Testning.exe
+C:\Users\al223ec\Desktop\Uppgift-1\Triangel\kod\c#\TestTriangel\bin\Debug\L01Testning.pdb
+C:\Users\al223ec\Desktop\Uppgift-1\Triangel\kod\c#\TestTriangel\obj\Debug\TestTriangel.pdb
