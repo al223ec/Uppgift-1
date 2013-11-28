@@ -60,6 +60,10 @@ public class Triangle {
     return false;
   }
 }
+class Program
+{
+    static void Main(string[] args) { }
+}
 
 /* Exempel på användning: */
 /* class Program { */

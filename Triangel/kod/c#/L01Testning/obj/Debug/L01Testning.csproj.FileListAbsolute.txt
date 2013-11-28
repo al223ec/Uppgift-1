@@ -19,3 +19,6 @@ C:\Users\al223ec\Desktop\Uppgift-1\Triangel\kod\c#\L01Testning\obj\Debug\L01Test
 C:\Users\al223ec\Desktop\Uppgift-1_131125\Triangel\kod\c#\L01Testning\bin\Debug\L01Testning.exe.config
 C:\Users\al223ec\Desktop\Uppgift-1_131125\Triangel\kod\c#\L01Testning\obj\Debug\L01Testning.exe
 C:\Users\al223ec\Desktop\Uppgift-1_131125\Triangel\kod\c#\L01Testning\obj\Debug\L01Testning.pdb
+C:\Users\al223ec\Desktop\Uppgift-1_131125\Triangel\kod\c#\L01Testning\bin\Debug\L01Testning.exe
+C:\Users\al223ec\Desktop\Uppgift-1_131125\Triangel\kod\c#\L01Testning\bin\Debug\L01Testning.pdb
+C:\Users\al223ec\Desktop\Uppgift-1_131125\Triangel\kod\c#\L01Testning\obj\Debug\L01Testning.csprojResolveAssemblyReference.cache

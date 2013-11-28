@@ -89,7 +89,7 @@ namespace TestTriangel
             Point b = new Point(0, 3);
             Point c = new Point(0, 0);
 
-            double[] sides = (double[])GetFieldValue(new Triangle(new Point[] { a, b, c }), "sides");
+            double[] sides = (double[])GetFieldValue(new Triangle(new Point[]{ a, b, c }), "sides");
 
             //Kontrollera att programmet räknar ut rätt längd på sidorna
             Assert.IsTrue(sides[0] == 5, "programmet räknar inte ut sidan 0 rätt!!"); //c 
@@ -118,7 +118,7 @@ namespace TestTriangel
             }
             catch
             {
-                Assert.Fail("ArgumentException kastas inte när ett triangel objekt intieras med felaktiga point värden");
+                Assert.Fail("ArgumentException kastas inte när ett triangel objekt intieras med felaktigt antal point värden");
             }
         }
         [TestMethod]
